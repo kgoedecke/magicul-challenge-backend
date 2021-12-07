@@ -1,7 +1,7 @@
 {
-  "name": "express-typescript-typeorm-boilerplate",
+  "name": "api-magicul-challenge",
   "version": "1.0.0",
-  "description": "RESTful API boilerplate with Typescript, TypeORM, ExpressJs & Mocha.",
+  "description": "A RESTful API for the Magicul Challenge",
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "rimraf dist && tsc",
@@ -21,6 +21,7 @@
     "multer": "^1.4.3",
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.41",
     "typeorm-naming-strategies": "^2.0.0",
     "validator": "^13.7.0"

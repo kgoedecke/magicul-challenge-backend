@@ -1,7 +1,7 @@
-import { ConnectionOptions } from 'typeorm';
-import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
+import { ConnectionOptions } from 'typeorm'
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 
-const config: ConnectionOptions = {
+export const config: ConnectionOptions = {
   type: 'postgres',
   host: process.env.PG_HOST,
   port: Number(process.env.PG_PORT),
@@ -19,6 +19,4 @@ const config: ConnectionOptions = {
     subscribersDir: 'src/typeorm/subscriber',
   },
   namingStrategy: new SnakeNamingStrategy(),
-};
-
-export = config;
+}
