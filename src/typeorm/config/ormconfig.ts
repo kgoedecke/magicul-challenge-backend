@@ -8,15 +8,11 @@ export const config: ConnectionOptions = {
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  synchronize: false,
+  synchronize: true,
   logging: false,
   entities: ['src/typeorm/entities/**/*.ts'],
-  migrations: ['src/typeorm/migrations/**/*.ts'],
-  subscribers: ['src/typeorm/subscriber/**/*.ts'],
   cli: {
     entitiesDir: 'src/typeorm/entities',
-    migrationsDir: 'src/typeorm/migrations',
-    subscribersDir: 'src/typeorm/subscriber',
   },
   namingStrategy: new SnakeNamingStrategy(),
 }
