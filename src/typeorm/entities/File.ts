@@ -13,10 +13,10 @@ import { User } from './User'
 
 @Entity()
 export class File {
-  constructor(filename: string, mimeType: string, data: Buffer, owner: User) {
+  constructor(filename: string, mimeType: string, size: number, data: Buffer, owner: User) {
     this.filename = filename
     this.mimeType = mimeType
-    this.data = data
+    this.size = size
     this.owner = owner
   }
 
@@ -31,9 +31,6 @@ export class File {
 
   @Column()
   mimeType: string
-
-  @Column({ type: 'bytea', nullable: false })
-  data: Buffer
 
   @ManyToOne(() => User, (user) => user.files)
   @JoinColumn()

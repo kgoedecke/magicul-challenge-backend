@@ -8,15 +8,12 @@ export const upload = async (request: Request, response: Response) => {
   const { body, file } = request
 
   const user = await User.findById(body.user_id)
-  if (!user) throw new Error('User not found')
-
-  console.log({ file })
+  if (!user) return response.status(404).send('User not found')
 
   const fileWithOwner = {
     filename: file.originalname,
     mimeType: file.mimetype,
     size: file.size,
-    data: file.buffer,
     owner: user,
   }
 
