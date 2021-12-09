@@ -5,10 +5,14 @@ import cors from 'cors'
 import express from 'express'
 import helmet from 'helmet'
 import morgan from 'morgan'
+import { createConnection } from 'typeorm'
 
 import routes from './routes'
+import { config } from './typeorm/config/ormconfig'
 
 export const app = express()
+createConnection(config)
+
 app.use(cors())
 app.use(helmet())
 
