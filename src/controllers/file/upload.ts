@@ -7,8 +7,13 @@ import { User } from '../../typeorm/entities/User'
 export const upload = async (request: Request, response: Response) => {
   const { body, file } = request
 
-  const user = await User.findById(body.user_id)
+  console.log({ body })
+  console.log({ file })
+
+  const user = await User.findById(parseInt(body.user_id))
+
   if (!user) return response.status(404).send('User not found')
+  if (!file) return response.status(404).send('File not found')
 
   const fileWithOwner = {
     filename: file.originalname,

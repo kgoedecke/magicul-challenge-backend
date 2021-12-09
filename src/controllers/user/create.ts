@@ -13,5 +13,8 @@ export const create = async (request: Request, response: Response) => {
     response.json(user)
   }
 
-  response.status(400).send({ message: 'USERNAME_UNAVAILABLE' })
+  const user = await getRepository(User).findOne({ where: { name: name } })
+
+  // Sign User In if username exists
+  response.status(200).json(user)
 }
