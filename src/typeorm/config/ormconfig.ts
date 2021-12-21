@@ -15,4 +15,10 @@ export const config: ConnectionOptions = {
     entitiesDir: 'src/typeorm/entities',
   },
   namingStrategy: new SnakeNamingStrategy(),
+  ssl: true,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
 }
